@@ -10,9 +10,12 @@
             text-align: center;
             background-color: #f7cb19;
             color: #014694;
+            margin: 0;
+            padding: 20px;
         }
         table {
-            width: 50%;
+            width: 90%;
+            max-width: 600px;
             margin: 20px auto;
             border-collapse: collapse;
             background-color: white;
@@ -22,6 +25,7 @@
             height: 40px;
             text-align: center;
             border: 1px solid #014694;
+            font-size: 1rem;
         }
         .highlight {
             background-color: #014694;
@@ -39,6 +43,12 @@
         button:disabled {
             background-color: gray;
             cursor: not-allowed;
+        }
+        @media (max-width: 600px) {
+            td {
+                height: 30px;
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
