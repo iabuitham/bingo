@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo</title>
+    <style>
+        body {
+            background-color: #014694;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .container {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .head {
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .dot {  
+            height: 150px;
+            width: 150px;
+            background-color: #f7cb19;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        p {
+            color: white;
+            font-size: 45px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .generated {
+            color: white;
+            font-size: 80px;
+            font-weight: bold;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 15px 30px;
+            margin-top: 40px;
+            border: none;
+            border-radius: 10px;
+            background-color: #f7cb19;
+            color: #014694;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e6b800;
+        }
+
+        .table-container {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        table {
+            width: 200px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #014694;
+            padding: 10px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        th {
+            background-color: #f7cb19;
+            color: #014694;
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <h1>College De La Salle Bingo</h1>
+    </div>
+    
+    <div class="container">
+        <div>
+            <p>The number is</p>
+            <div class="dot">
+                <h1 class="generated">0</h1>
+            </div>
+            <button onclick="generateBingoNumber()">Generate Number</button>
+        </div>
+
+        <div class="table-container">
+            <h2>Generated Numbers</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                    </tr>
+                </thead>
+                <tbody id="numberList">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        let generatedNumbers = [];
+
+        function generateBingoNumber() {
+            let number = Math.floor(Math.random() * 100) + 1;
+
+            if (!generatedNumbers.includes(number)) {
+                generatedNumbers.push(number);
+                document.querySelector(".generated").innerText = number;
+                
+                let tableBody = document.getElementById("numberList");
+                let row = document.createElement("tr");
+                let cell = document.createElement("td");
+                cell.innerText = number;
+                row.appendChild(cell);
+                tableBody.appendChild(row);
+            } else {
+                generateBingoNumber();
+            }
+        }
+    </script>
+</body>
+</html>
