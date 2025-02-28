@@ -12,52 +12,60 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
         }
 
         .container {
             display: flex;
-            gap: 50px;
+            flex-wrap: wrap;
+            gap: 30px;
             align-items: center;
+            justify-content: center;
+            width: 100%;
         }
 
         .head {
             color: white;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
+            margin-bottom: 20px;
         }
 
         .dot {  
-            height: 150px;
-            width: 150px;
+            height: 120px;
+            width: 120px;
             background-color: #f7cb19;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto;
+            margin: 10px auto;
         }
 
         p {
             color: white;
-            font-size: 45px;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 30px;
+            font-family: Arial, sans-serif;
         }
 
         .generated {
             color: white;
-            font-size: 80px;
+            font-size: 50px;
             font-weight: bold;
         }
 
         button {
-            font-size: 20px;
-            padding: 15px 30px;
-            margin-top: 40px;
+            font-size: 18px;
+            padding: 12px 25px;
+            margin-top: 20px;
             border: none;
             border-radius: 10px;
             background-color: #f7cb19;
             color: #014694;
             font-weight: bold;
             cursor: pointer;
+            transition: 0.3s;
         }
 
         button:hover {
@@ -68,11 +76,14 @@
             background-color: white;
             padding: 15px;
             border-radius: 10px;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
+            width: 250px;
+            max-width: 90%;
+            overflow-x: auto;
         }
 
         table {
-            width: 200px;
+            width: 100%;
             border-collapse: collapse;
         }
 
@@ -80,12 +91,32 @@
             border: 1px solid #014694;
             padding: 10px;
             text-align: center;
-            font-size: 20px;
+            font-size: 18px;
         }
 
         th {
             background-color: #f7cb19;
             color: #014694;
+        }
+
+        @media (max-width: 600px) {
+            .dot {
+                height: 100px;
+                width: 100px;
+            }
+
+            p {
+                font-size: 25px;
+            }
+
+            .generated {
+                font-size: 40px;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
         }
     </style>
 </head>
